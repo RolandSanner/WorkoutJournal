@@ -1,0 +1,115 @@
+[
+    {
+      "name": "Users",
+      "fields": [
+        {"name": "UserID", "type": "STRING"},
+        {"name": "Username", "type": "STRING"},
+        {"name": "PasswordHash", "type": "STRING"},
+        {"name": "Email", "type": "STRING"},
+        {"name": "CreatedAt", "type": "TIMESTAMP"},
+        {"name": "UpdatedAt", "type": "TIMESTAMP"}
+      ],
+      "primaryKey": "UserID"
+    },
+    {
+      "name": "Exercises",
+      "fields": [
+        {"name": "ExerciseID", "type": "STRING"},
+        {"name": "ExerciseName", "type": "STRING"},
+        {"name": "Description", "type": "STRING"},
+        {"name": "MuscleGroup", "type": "STRING"}
+      ],
+      "primaryKey": "ExerciseID"
+    },
+    {
+      "name": "Workouts",
+      "fields": [
+        {"name": "WorkoutID", "type": "STRING"},
+        {"name": "UserID", "type": "STRING"},
+        {"name": "Date", "type": "DATE"},
+        {"name": "ExerciseID", "type": "STRING"},
+        {"name": "Sets", "type": "INTEGER"},
+        {"name": "Reps", "type": "INTEGER"},
+        {"name": "Weight", "type": "FLOAT"},
+        {"name": "CreatedAt", "type": "TIMESTAMP"},
+        {"name": "UpdatedAt", "type": "TIMESTAMP"}
+      ],
+      "primaryKey": "WorkoutID"
+    },
+    {
+      "name": "Progress",
+      "fields": [
+        {"name": "ProgressID", "type": "STRING"},
+        {"name": "UserID", "type": "STRING"},
+        {"name": "Date", "type": "DATE"},
+        {"name": "TotalWeightLifted", "type": "FLOAT"},
+        {"name": "ExerciseID", "type": "STRING"},
+        {"name": "Improvement", "type": "FLOAT"},
+        {"name": "CreatedAt", "type": "TIMESTAMP"},
+        {"name": "UpdatedAt", "type": "TIMESTAMP"}
+      ],
+      "primaryKey": "ProgressID"
+    },
+    {
+      "name": "ExerciseCategories",
+      "fields": [
+        {"name": "CategoryID", "type": "STRING"},
+        {"name": "CategoryName", "type": "STRING"},
+        {"name": "Description", "type": "STRING"}
+      ],
+      "primaryKey": "CategoryID"
+    },
+    {
+      "name": "UserProfiles",
+      "fields": [
+        {"name": "UserID", "type": "STRING"},
+        {"name": "Age", "type": "INTEGER"},
+        {"name": "Gender", "type": "STRING"},
+        {"name": "FitnessLevel", "type": "STRING"},
+        {"name": "FitnessGoals", "type": "STRING"}
+      ],
+      "primaryKey": "UserID"
+    },
+    {
+      "name": "WorkoutExercises",
+      "fields": [
+        {"name": "WorkoutID", "type": "STRING"},
+        {"name": "ExerciseID", "type": "STRING"},
+        {"name": "Sets", "type": "INTEGER"},
+        {"name": "Reps", "type": "INTEGER"},
+        {"name": "Weight", "type": "FLOAT"}
+    ],
+    "primaryKey": ["WorkoutID", "ExerciseID"]
+  },
+  {
+    "name": "UserPreferences",
+    "fields": [
+      {"name": "UserID", "type": "STRING"},
+      {"name": "PreferenceName", "type": "STRING"},
+      {"name": "PreferenceValue", "type": "STRING"}
+    ],
+    "primaryKey": ["UserID", "PreferenceName"]
+  },
+  {
+    "name": "ExerciseImages",
+    "fields": [
+      {"name": "ExerciseID", "type": "STRING"},
+      {"name": "ImageURL", "type": "STRING"},
+      {"name": "Description", "type": "STRING"}
+    ],
+    "primaryKey": ["ExerciseID", "ImageURL"]
+  },
+  {
+    "name": "WorkoutTemplates",
+    "fields": [
+      {"name": "TemplateID", "type": "STRING"},
+      {"name": "UserID", "type": "STRING"},
+      {"name": "TemplateName", "type": "STRING"},
+      {"name": "Description", "type": "STRING"},
+      {"name": "TotalExercises", "type": "INTEGER"},
+      {"name": "TotalSets", "type": "INTEGER"},
+      {"name": "TotalReps", "type": "INTEGER"}
+    ],
+    "primaryKey": "TemplateID"
+  }
+]
